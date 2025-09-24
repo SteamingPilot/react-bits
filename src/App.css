@@ -1,0 +1,11 @@
+/* Navbar link styles */
+.navbar-links .nav-link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-links .nav-link:hover,
+.navbar-links .nav-link:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
