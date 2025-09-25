@@ -1,66 +1,43 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const Welcome = () => {
   return (
-    <section className="py-5">
-      <Container>
+    <section className="py-20" id='services'>
+      <div className="max-w-7xl mx-auto px-4">
         {/* Welcome Title */}
-        <div className="text-center mb-5">
-          <h1 className="display-5 fw-bold mb-3">Welcome</h1>
-          <div 
-            className="mx-auto"
-            style={{
-              width: '60px',
-              height: '2px',
-              backgroundColor: '#333'
-            }}
-          ></div>
+        <div className="text-center mb-16">
+          <h1 className="text-6xl font-medium mb-4">Welcome</h1>
+          <div className='max-w-52 h-1 bg-black mx-auto'></div>
         </div>
 
-        <Row className="align-items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left Column - Text Content */}
-          <Col lg={6} className="mb-4 mb-lg-0">
-            <p className="fs-5 text-muted">
+          <div className='flex-1 max-w-2xl'>
+            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               Hello and welcome to inverner. In here, we provide all sorts of materials you need for full-stack web development. With an experience of more than 5 years, our team members have worked with a huge number of clients all across the globe. We always value our clients' preferences. If you like WordPress, we work with WordPress. If you prefer Bootstrap, we're on it too.
             </p>
-            <Button 
-              variant="primary" 
-              size="lg" 
-              className="mt-4 px-4 py-3 fw-semibold"
-              style={{ backgroundColor: '#6f42c1', borderColor: '#6f42c1' }}
+            <a
               href="#contact"
+              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
             >
               Contact Us
-            </Button>
-          </Col>
+            </a>
+          </div>
 
           {/* Right Column - Image */}
-          <Col lg={6}>
+          <div className="flex-1">
             <div 
-              className="position-relative"
-              style={{
-                padding: '8px',
-                backgroundColor: '#fff',
-                border: '1px solid #e9ecef',
-                borderRadius: '8px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-              }}
+              className="relative p-2 bg-white border border-gray-200 rounded-lg shadow-lg"
             >
               <img 
                 src="https://images.unsplash.com/photo-1521791136064-798650632fa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                 alt="Team working in office"
-                className="img-fluid rounded"
-                style={{
-                  width: '100%',
-                  height: '400px',
-                  objectFit: 'cover'
-                }}
+                className="w-full h-96 object-cover rounded"
               />
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

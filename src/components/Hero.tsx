@@ -1,62 +1,44 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import heroImage from "../assets/hero-image-1.jpg";
+import React from 'react'
+import heroImage from '../assets/hero-image-1.jpg'
 
 const Hero = () => {
-    return (
-        <div
-            className="hero-section d-flex align-items-center justify-content-center"
-            style={{
-                backgroundImage: `url(${heroImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                minHeight: "100vh",
-                position: "relative",
-            }}
-        >
-            {/* Overlay for better text readability */}
-            <div
-                className="position-absolute w-100 h-100"
-                style={{
-                    backgroundColor: "rgba(0, 0, 0, 0.2)",
-                    top: 0,
-                    left: 0,
-                }}
-            ></div>
-
-            <Container className="position-relative z-1 text-center text-white">
-                <Row className="justify-content-center">
-                    <Col lg={8} xl={6}>
-                        <h1 className="display-1 mb-4">
-                            Create The Best
-                        </h1>
-                        <p className="mb-5 fs-4">
-                            We craft exceptional digital experiences that bring
-                            your vision to life with innovative design and
-                            cutting-edge technology.
-                        </p>
-                        <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                            <Button
-                                variant="danger"
-                                size="lg"
-                                href="#portfolio"
-                            >
-                                Contact Us
-                            </Button>
-                            <Button
-                                variant="outline-dark"
-                                href="#contact"
-                                size="lg"
-                            >
-                                Watch Portfolio
-                            </Button>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+  return (
+    <div 
+    id='home'
+      className="flex items-center justify-center relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${heroImage})`,
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
+      
+      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Welcome to Our Creative Studio
+          </h1>
+          <p className="text-lg md:text-xl mb-8 leading-relaxed">
+            We craft exceptional digital experiences that bring your vision to life with innovative design and cutting-edge technology.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="#portfolio"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
+            >
+              Watch Portfolio
+            </a>
+            <a 
+              href="#contact"
+              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
-    );
-};
+      </div>
+    </div>
+  )
+}
 
-export default Hero;
+export default Hero

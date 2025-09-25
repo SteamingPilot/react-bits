@@ -1,47 +1,63 @@
-import React from "react";
-// import { Navbar, Nav, Container } from "react-bootstrap";
-import { Container } from "react-bootstrap";
+import React from 'react'
+
+// Type definition for navigation links
+interface NavLink {
+  label: string
+  href: string
+}
+
+// Navigation links configuration
+const navLinks: NavLink[] = [
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'Our Team', href: '#team' },
+  { label: 'Contact Us', href: '#contact' }
+]
 
 const NavBar = () => {
-	return (
-		// <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
-		//   <Container fluid>
-		//     <Navbar.Brand href="#home" className="fw-bold">
-		//       Paul Palok
-		//     </Navbar.Brand>
-		//     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-		//     <Navbar.Collapse id="basic-navbar-nav">
-		//       <Nav className="ms-auto">
-		//         <Nav.Link href="#home" className="px-3">
-		//           Home
-		//         </Nav.Link>
-		//         <Nav.Link href="#services" className="px-3">
-		//           Services
-		//         </Nav.Link>
-		//         <Nav.Link href="#team" className="px-3">
-		//           Our Team
-		//         </Nav.Link>
-		//         <Nav.Link href="#contact" className="px-3">
-		//           Contact Us
-		//         </Nav.Link>
-		//       </Nav>
-		//     </Navbar.Collapse>
-		//   </Container>
-		// </Navbar>
 
-			<Container fluid className="d-flex justify-content-between align-items-center bg-dark text-white">
-                <div className="p-1">
-                    <h3>Paul Palok</h3>
-                </div>
+// Function to handle smooth scrolling
+const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
 
-				<div className="d-flex gap-3 fs-6 fw-normal navbar-links">
-					<a href="#home" className="nav-link px-2">Home</a>
-					<a href="#services" className="nav-link px-2">Service</a>
-					<a href="#team" className="nav-link px-2">Our Team</a>
-					<a href="#contact" className="nav-link px-2">Contact Us</a>
-				</div>
-            </Container>
-	);
-};
+  return (
+    <nav className="bg-zinc-800 text-white py-4">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Brand */}
+          <div className="flex-shrink-0">
+            <a href="#home" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-200">
+              Paul Palok
+            </a>
+          </div>
 
-export default NavBar;
+          {/* Desktop Navigation */}
+          <div className="flex items-center space-x-8">
+            {navLinks.map((link, index) => (
+              <a 
+                key={index}
+                href={link.href} 
+                className="text-lg font-medium text-zinc-300 hover:text-white px-3 py-2 transition-colors duration-200"
+                onClick={(e)=>handleSmoothScroll(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+export default NavBar
