@@ -34,7 +34,7 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
     <nav className="bg-zinc-800 text-white py-4">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Brand */}
+          {/* Brand Logo*/}
           <div className="flex-shrink-0">
             <a href="#home" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-200">
               Paul Palok
