@@ -27,7 +27,6 @@ const Welcome = () => {
           </div>
         </div>
       </div>
-
     </section>
   )
 }
