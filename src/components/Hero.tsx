@@ -1,60 +1,41 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import heroImage from "../assets/hero-image-1.jpg";
 
 const Hero = () => {
     return (
         <div
-            className="hero-section d-flex align-items-center justify-content-center"
+            className="position-relative min-vh-100 d-flex align-items-center justify-content-center bg-cover bg-center bg-no-repeat"
             style={{
                 backgroundImage: `url(${heroImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                minHeight: "100vh",
-                position: "relative",
             }}
         >
-            {/* Overlay for better text readability */}
-            <div
-                className="position-absolute w-100 h-100"
-                style={{
-                    backgroundColor: "rgba(0, 0, 0, 0.2)",
-                    top: 0,
-                    left: 0,
-                }}
-            ></div>
+            {/* Overlay */}
+            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
 
-            <Container className="position-relative z-1 text-center text-white">
-                <Row className="justify-content-center">
-                    <Col lg={8} xl={6}>
-                        <h1 className="display-1 mb-4">
-                            Create The Best
-                        </h1>
-                        <p className="mb-5 fs-4">
-                            We craft exceptional digital experiences that bring
-                            your vision to life with innovative design and
-                            cutting-edge technology.
-                        </p>
-                        <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                            <Button
-                                variant="danger"
-                                size="lg"
-                                href="#portfolio"
-                            >
-                                Contact Us
-                            </Button>
-                            <Button
-                                variant="outline-dark"
-                                href="#contact"
-                                size="lg"
-                            >
-                                Watch Portfolio
-                            </Button>
+            <div className="position-relative z-1 text-center text-white px-4 w-100">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-md-10 col-lg-8">
+                            <h1 className="display-4 fw-bolder mb-3">Create The Best</h1>
+                            <p className="lead mb-4 text-white-50">
+                                We craft exceptional digital experiences that bring your
+                                vision to life with innovative design and cutting-edge
+                                technology.
+                            </p>
+                            <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                                <a href="#portfolio" className="btn btn-danger btn-lg px-4">
+                                    Contact Us
+                                </a>
+                                <a href="#contact" className="btn btn-outline-light btn-lg px-4">
+                                    Watch Portfolio
+                                </a>
+                            </div>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

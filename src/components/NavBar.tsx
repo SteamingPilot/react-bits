@@ -1,46 +1,30 @@
 import React from "react";
-// import { Navbar, Nav, Container } from "react-bootstrap";
-import { Container } from "react-bootstrap";
 
 const NavBar = () => {
+	const sections: { label: string; id: string }[] = [
+		{ label: "Home", id: "home" },
+		{ label: "Services", id: "services" },
+		{ label: "Our Team", id: "team" },
+		{ label: "Contact Us", id: "contact" },
+	];
+
 	return (
-		// <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
-		//   <Container fluid>
-		//     <Navbar.Brand href="#home" className="fw-bold">
-		//       Paul Palok
-		//     </Navbar.Brand>
-		//     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-		//     <Navbar.Collapse id="basic-navbar-nav">
-		//       <Nav className="ms-auto">
-		//         <Nav.Link href="#home" className="px-3">
-		//           Home
-		//         </Nav.Link>
-		//         <Nav.Link href="#services" className="px-3">
-		//           Services
-		//         </Nav.Link>
-		//         <Nav.Link href="#team" className="px-3">
-		//           Our Team
-		//         </Nav.Link>
-		//         <Nav.Link href="#contact" className="px-3">
-		//           Contact Us
-		//         </Nav.Link>
-		//       </Nav>
-		//     </Navbar.Collapse>
-		//   </Container>
-		// </Navbar>
-
-			<Container fluid className="d-flex justify-content-between align-items-center bg-dark text-white">
-                <div className="p-1">
-                    <h3>Paul Palok</h3>
-                </div>
-
-				<div className="d-flex gap-3 fs-6 fw-normal navbar-links">
-					<a href="#home" className="nav-link px-2">Home</a>
-					<a href="#services" className="nav-link px-2">Service</a>
-					<a href="#team" className="nav-link px-2">Our Team</a>
-					<a href="#contact" className="nav-link px-2">Contact Us</a>
-				</div>
-            </Container>
+		<nav className="navbar text-white bg-dark border-bottom">
+			<div className="container d-flex align-items-center">
+				<a className="navbar-brand fw-semibold text-white" href="#home">
+					React Bits
+				</a>
+				<ul className="nav ms-auto">
+					{sections.map((section) => (
+						<li className="nav-item" key={section.id}>
+							<a className="nav-link text-white" href={`#${section.id}`}>
+								{section.label}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		</nav>
 	);
 };
 
