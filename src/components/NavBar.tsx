@@ -1,4 +1,5 @@
 import React from "react";
+import './NavBar.css'
 
 const NavBar = () => {
 	const sections: { label: string; id: string }[] = [
@@ -9,15 +10,15 @@ const NavBar = () => {
 	];
 
 	return (
-		<nav className="navbar text-white bg-dark border-bottom">
-			<div className="container d-flex align-items-center">
-				<a className="navbar-brand fw-semibold text-white" href="#home">
+		<nav className="navbar">
+			<div className="navbar__container">
+				<a className="navbar__brand" href="#home">
 					React Bits
 				</a>
-				<ul className="nav ms-auto">
+				<ul className="navbar__links">
 					{sections.map((section) => (
-						<li className="nav-item" key={section.id}>
-							<a className="nav-link text-white" href={`#${section.id}`}>
+						<li key={section.id}>
+							<a className="navbar__link" href={`#${section.id}`}>
 								{section.label}
 							</a>
 						</li>
