@@ -2,7 +2,7 @@
 import './App.css'
 
 import NavBar from './components/NavBar';
-import Hero from './components/Hero';
+import Hero from './components/Hero/Hero';
 import Welcome from './components/Welcome';
 
 function App() {
